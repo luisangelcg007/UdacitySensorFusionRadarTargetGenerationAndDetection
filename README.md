@@ -33,18 +33,18 @@ Radar Module in the Sensor Fusion Nanodegree
 Whith this the implementation ends.
 
 ## Selection of Training, Guard cells and offset
-The next values were selected in order to get a clean plot
-For Range and Speed Training Cells.
+The next values were selected in order to get a clean plot<br>
+For Range and Speed Training Cells.<br>
 * `trainCells = 12;`<br>
 * `trainBand = 6;  `<br>
-For Range and Speed Guard Cells.
+For Range and Speed Guard Cells.<br>
 * `guardCells= 4;  `<br>
 * `guardBand = 3;  `<br>
-Offset Value.
+Offset Value.<br>
 * `offset = 1.2    ` <br>
 
 ## Steps taken to suppress the non-thresholded cells at the edges
-if the value si not 0 and is not 1, then is not, just set it to 0 
+if the value si not 0 and is not 1, then is not, just set it to 0.<br>
 `dopplerMap(dopplerMap~=0 & dopplerMap~=1) = 0;`
 
 ### **Radar Plots**
