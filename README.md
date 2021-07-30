@@ -49,6 +49,6 @@ if the value si not 0 and is not 1, then is not, just set it to 0.<br>
 
 ### **Radar Plots**
 This is the output for a target at 110m moving at -20 m/s relative speed
-<img src="images/plots1.png" />
-<img src="images/plots2.png" />
-<img src="images/plots3.png" />
+<img src="images/plot1.png" /><br>
+<img src="images/plot2.png" /><br>
+<img src="images/plot3.png" /><br>
