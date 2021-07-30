@@ -7,7 +7,6 @@ Radar Module in the Sensor Fusion Nanodegree
 `row1EndVal = (Nr/2) - (trainCells + guardCells);`<br>
 `col1InitVal = trainBand + guardBand + 1;        `<br>
 `col1EndVal = (Nd) - (trainBand + guardBand);    `<br>
-
 `for row1 = row1InitVal : row1EndVal`<br>
 `  for col1 = col1InitVal : col1EndVal`
 
@@ -20,7 +19,7 @@ Radar Module in the Sensor Fusion Nanodegree
 `          
 `    if (absoluteValueRowDifference > guardCells || absoluteValueColumnDifference > guardBand)`
 
-* After that the program calculate threshold from noise average then add Added a pre-determined offset to determine the threshold
+* After that the program calculate threshold from noise average then add Added a pre-determined offset to determine the threshold<br>
 `threshold = pow2db(noise / (2 * (trainBand + guardBand + 1) * 2 * (trainCells + guardCells + 1) - `<br>
 `                              - (guardCells * guardBand) - 1));                                   `<br>
 `threshold = threshold + offset;                                                                   `
@@ -37,10 +36,10 @@ Whith this the implementation ends.
 The next values were selected in order to get a clean plot
 For Range and Speed Training Cells.
 * `trainCells = 12;`<br>
-* `trainBand = 6;  `
+* `trainBand = 6;  `<br>
 For Range and Speed Guard Cells.
 * `guardCells= 4;  `<br>
-* `guardBand = 3;  `
+* `guardBand = 3;  `<br>
 Offset Value.
 * `offset = 1.2    ` <br>
 
@@ -50,4 +49,6 @@ if the value si not 0 and is not 1, then is not, just set it to 0
 
 ### **Radar Plots**
 This is the output for a target at 110m moving at -20 m/s relative speed
-<img src="images/plots.png" />
+<img src="images/plots1.png" />
+<img src="images/plots2.png" />
+<img src="images/plots3.png" />
