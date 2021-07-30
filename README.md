@@ -44,7 +44,7 @@ Offset Value.<br>
 * `offset = 1.2    ` <br>
 
 ## Steps taken to suppress the non-thresholded cells at the edges
-if the value si not 0 and is not 1, then is not, just set it to 0.<br>
+if the value is not 0 and if is not 1, then is noise, just set it to 0.<br>
 `dopplerMap(dopplerMap~=0 & dopplerMap~=1) = 0;`
 
 ### **Radar Plots**
