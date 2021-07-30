@@ -116,8 +116,10 @@ subplot(2,1,1)
  % plot FFT output 
 plot(halfSignalFFT);
  
-axis ([0 200 0 1]);
-
+axis ([100 120 0 0.5]);
+title('Range from First FFT');
+ylabel('Amplitude');
+xlabel('Range');
 
 
 %% RANGE DOPPLER RESPONSE
@@ -147,7 +149,13 @@ RDM = 10*log10(RDM) ;
 %dimensions
 doppler_axis = linspace(-100,100,Nd);
 range_axis = linspace(-200,200,Nr/2)*((Nr/2)/400);
-figure,surf(doppler_axis,range_axis,RDM);
+
+figure ('Name', 'Amplitude and Range From FFT');
+surf(doppler_axis,range_axis,RDM);
+title('Amplitude and Range From FFT');
+xlabel('Speed');
+ylabel('Range');
+zlabel('Amplitude');
 
 %% CFAR implementation
 
@@ -155,18 +163,18 @@ figure,surf(doppler_axis,range_axis,RDM);
 
 % *%TODO* :
 %Select the number of Training Cells in both the dimensions.
-trainCells = 10;
-trainBand = 8;
+trainCells = 12;
+trainBand = 6;
 
 % *%TODO* :
 %Select the number of Guard Cells in both dimensions around the Cell under 
 %test (CUT) for accurate estimation
 guardCells = 4;
-guardBand = 4;
+guardBand = 3;
 
 % *%TODO* :
 % offset the threshold by SNR value in dB
-offset = 1.4;
+offset = 1.2;
 
 % *%TODO* :
 %Create a vector to store noise_level for each iteration on training cells
@@ -232,6 +240,7 @@ end
 %than the Range Doppler Map as the CUT cannot be located at the edges of
 %matrix. Hence,few cells will not be thresholded. To keep the map size same
 % set those values to 0. 
+% Set edge cells to zero as sliding window reduces size
 dopplerMap(dopplerMap~=0 & dopplerMap~=1) = 0;
 
 % *%TODO* :
@@ -240,4 +249,8 @@ dopplerMap(dopplerMap~=0 & dopplerMap~=1) = 0;
 figure('Name', 'CA-CFAR Filtered RDM')
 surf(doppler_axis,range_axis,dopplerMap);
 colorbar;
+title( 'CA-CFAR Filtered RDM surface plot');
+xlabel('Speed');
+ylabel('Range');
+zlabel('Normalized Amplitude');
  
